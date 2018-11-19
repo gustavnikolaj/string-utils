@@ -1,6 +1,8 @@
 # Template String Utilities
 
 [![npm version](https://badge.fury.io/js/%40gustavnikolaj%2Fstring-utils.svg)](https://www.npmjs.com/package/@gustavnikolaj/string-utils)
+[![Build Status](https://travis-ci.com/gustavnikolaj/string-utils.svg?branch=master)](https://travis-ci.com/gustavnikolaj/string-utils)
+[![Coverage Status](https://coveralls.io/repos/github/gustavnikolaj/string-utils/badge.svg?branch=master)](https://coveralls.io/github/gustavnikolaj/string-utils?branch=master)
 
 ## deindent
 
