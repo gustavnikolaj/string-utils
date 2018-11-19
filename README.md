@@ -1,5 +1,7 @@
 # Template String Utilities
 
+[![npm version](https://badge.fury.io/js/%40gustavnikolaj%2Fasync-main-wrap.svg)](https://www.npmjs.com/package/@gustavnikolaj/async-main-wrap)
+
 ## deindent
 
 Strips indentation based on the indentation found on the first line. Will leave
