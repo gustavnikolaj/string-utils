@@ -1,7 +1,7 @@
 {
   "name": "@gustavnikolaj/string-utils",
   "version": "0.0.0",
-  "description": "",
+  "description": "Template string utilities",
   "main": "index.js",
   "files": [
     "index.js",
@@ -14,8 +14,12 @@
     "prepublish": "npm run build",
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "template",
+    "string",
+    "deindent"
+  ],
+  "author": "Gustav Nikolaj <gustavnikolaj@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
