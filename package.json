@@ -2,16 +2,26 @@
   "name": "@gustavnikolaj/string-utils",
   "version": "0.0.0",
   "description": "",
-  "main": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "deindent.js"
+  ],
   "scripts": {
+    "build": "babel ./src --out-dir .",
     "coverage": "nyc -a --include 'lib/**/*.js' mocha && nyc report --reporter=lcov",
     "lint": "eslint .",
+    "prepublish": "npm run build",
     "test": "mocha"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-plugin-add-module-exports": "^1.0.0",
     "eslint": "^5.9.0",
     "eslint-config-pretty-standard": "^2.0.0",
     "eslint-plugin-import": "^2.14.0",

@@ -2,3 +2,6 @@
 /coverage
 /.vscode/settings.json
 /.nyc_output
+
+# Ignore files that are built by babel, but don't ignore dotfiles etc.
+/[a-z]*.js

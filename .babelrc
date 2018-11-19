@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": { "ie": 9 },
+        "modules": "commonjs",
+        "useBuiltIns": false
+      }
+    ]
+  ],
+  "plugins": ["babel-plugin-add-module-exports"]
+}
