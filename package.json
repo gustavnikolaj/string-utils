@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "babel ./src --out-dir .",
-    "coverage": "nyc -a --include 'lib/**/*.js' mocha && nyc report --reporter=lcov",
+    "coverage": "nyc -a --include 'src/**/*.js' mocha && nyc report --reporter=lcov",
     "lint": "eslint .",
     "prepublish": "npm run build",
     "test": "mocha"
