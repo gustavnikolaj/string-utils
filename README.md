@@ -31,3 +31,36 @@ Can also be required directly:
 ```js
 import deindent from "@gustavnikolaj/string-utils/deindent";
 ```
+
+## collapse
+
+Collapses whitespace in a line wrapped over multiple lines.
+
+```js
+import { collapse } from "@gustavnikolaj/string-utils";
+
+console.log(collapse`
+  foo bar
+  qux baz
+`); // => "foo bar qux baz"
+
+console.log(collapse`
+  foo bar
+    qux baz
+`); // => "foo bar qux baz"
+
+console.log(collapse`
+  This is a very long string that I rather not have to put in a single line
+  because then it would make my code spill over and take more than the 80
+  characters per line that I prefer.
+`);
+// => "This is a very long string that I rather not have to put in a single " +
+//    "line because then it would make my code spill over and take more " +
+//    "than the 80 characters per line that I prefer."
+```
+
+Can also be required directly:
+
+```js
+import collapse from "@gustavnikolaj/string-utils/collapse";
+```

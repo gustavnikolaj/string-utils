@@ -5,6 +5,7 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "collapse.js",
     "deindent.js"
   ],
   "scripts": {
