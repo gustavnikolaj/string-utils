@@ -1,6 +1,6 @@
 # Template String Utilities
 
-[![npm version](https://badge.fury.io/js/%40gustavnikolaj%2Fasync-main-wrap.svg)](https://www.npmjs.com/package/@gustavnikolaj/async-main-wrap)
+[![npm version](https://badge.fury.io/js/%40gustavnikolaj%2Fstring-utils.svg)](https://www.npmjs.com/package/@gustavnikolaj/string-utils)
 
 ## deindent
 
