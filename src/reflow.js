@@ -62,15 +62,13 @@ function wrapTextToWidth(str, maximumWidth) {
           }
         }
 
-        if (!word && !tokens.slice(index).includes(" ")) {
+        if (!word) {
           // We're at the end of the collapsed string, and looking at the last word.
           word = tokens.slice(index).join("");
           nextIndex = tokens.length;
         }
 
-        if (word) {
-          words.push(word);
-        }
+        words.push(word);
       }
 
       index = nextIndex;
