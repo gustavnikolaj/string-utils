@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "babel ./src --out-dir .",
+    "clean": "node -r esm scripts/clean",
     "coverage": "nyc -a --include 'src/**/*.js' mocha && nyc report --reporter=lcov",
     "lint": "eslint .",
     "prepublish": "npm run build",
@@ -38,6 +39,7 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "prettier": "^1.15.2",
+    "rimraf": "^2.6.2",
     "unexpected": "^10.39.2"
   },
   "repository": {
