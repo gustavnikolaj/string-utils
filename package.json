@@ -6,7 +6,8 @@
   "files": [
     "index.js",
     "collapse.js",
-    "deindent.js"
+    "deindent.js",
+    "reflow.js"
   ],
   "scripts": {
     "build": "babel ./src --out-dir .",

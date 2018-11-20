@@ -68,3 +68,51 @@ Can also be required directly:
 ```js
 import collapse from "@gustavnikolaj/string-utils/collapse";
 ```
+
+## reflow
+
+Strips indentation as deindent, but will persist paragraphs (separated by double
+newlines like in markdown) and reflow the paragraphs so that they fit within a
+defined width.
+
+```js
+import { reflow } from "@gustavnikolaj/string-utils";
+
+console.log(reflow(8)`
+  foo bar qux baz foo bar
+`); // => "foo bar\nqux baz\nfoo bar"
+
+console.log(reflow(80)`
+  foo bar
+
+  qux baz
+`); // => "foo bar\n\nqux baz"
+
+console.log(reflow(30)`
+  This is a very long string that is for sure longer than 30 characters.
+
+  This is a very long string that is for sure longer than 30 characters.
+`);
+/* => This is a very long string
+      that is for sure longer than
+      30 characters.
+
+      This is a very long string
+      that is for sure longer than
+      30 characters. */
+```
+
+It also supports being called as a regular non-template-string function:
+
+```js
+reflow(
+  "This is a very long string that is for sure longer than 30 characters.",
+  30
+);
+```
+
+Can also be required directly:
+
+```js
+import reflow from "@gustavnikolaj/string-utils/reflow";
+```
