@@ -22,6 +22,9 @@ function wrapTextToWidth(str, maximumWidth) {
     while (index < tokens.length) {
       let nextIndex = index + 1;
 
+      const tokenIsBacktick = tokens[index] === "`";
+      let foundMatchingBacktick = false;
+
       if (tokens[index] === "`") {
         let endsAt = -1;
         for (let i = index + 1; i < tokens.length; i++) {
@@ -32,12 +35,22 @@ function wrapTextToWidth(str, maximumWidth) {
           }
         }
 
-        // if no matching backtick is found, treat it like normal text
+        // if we find a matching backtick, treat that entire thing as a word,
+        // but if no matching backtick is found, proceed as usual and treat it
+        // like any other word.
         if (endsAt !== -1) {
           words.push(tokens.slice(index, endsAt + 1).join(""));
           nextIndex = endsAt + 1;
+          foundMatchingBacktick = true;
         }
-      } else if (tokens[index] !== " ") {
+      }
+
+      if (
+        // Look for a word if the token is not a backtick and not a space
+        (!tokenIsBacktick && tokens[index] !== " ") ||
+        // Or if the token is a backtick and no matching one was found
+        (tokenIsBacktick && !foundMatchingBacktick)
+      ) {
         let word;
 
         for (let i = index; i < tokens.length; i++) {

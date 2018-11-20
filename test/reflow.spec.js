@@ -87,4 +87,23 @@ describe("reflow", () => {
       "The width must be a positive number"
     );
   });
+
+  it("should treat unmatched backticks as any other character", () => {
+    expect(
+      reflow(30)`
+        This is a very long string that is for sure
+        \`this is in backticks and can as such not be broken into smaller segments
+        longer than 30 characters.
+      `,
+      "to equal",
+      deindent`
+        This is a very long string
+        that is for sure \`this is in
+        backticks and can as such not
+        be broken into smaller
+        segments longer than 30
+        characters.
+      `
+    );
+  });
 });
