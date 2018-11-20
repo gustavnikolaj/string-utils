@@ -4,6 +4,7 @@
   "description": "Template string utilities",
   "main": "index.js",
   "files": [
+    "utils",
     "index.js",
     "collapse.js",
     "deindent.js",
