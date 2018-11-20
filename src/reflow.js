@@ -1,17 +1,13 @@
+import collapse from "./collapse";
+import deindent from "./deindent";
+
 function wrapTextToWidth(str, maximumWidth) {
   const wrappedParagraphs = [];
 
   // Process each of the paragraphs individually. Paragraphs should be
   // persisted, but linebreaks inside them should be rewrapped to make them fit.
   for (const paragraph of str.split("\n\n")) {
-    let collapsedLine = "";
-
-    // Build a collapsed line, where each of the line breaks is replaced with
-    // spaces.
-    for (let line of paragraph.split("\n")) {
-      line = line.trim();
-      collapsedLine += " " + line;
-    }
+    let collapsedLine = collapse([paragraph]);
 
     const words = [];
     const tokens = collapsedLine.split("");
@@ -95,8 +91,6 @@ function wrapTextToWidth(str, maximumWidth) {
 
   return wrappedParagraphs.join("\n\n");
 }
-
-import deindent from "./deindent";
 
 export default function reflow(str, width) {
   if (typeof width === "undefined") {
