@@ -116,3 +116,24 @@ Can also be required directly:
 ```js
 import reflow from "@gustavnikolaj/string-utils/reflow";
 ```
+
+## qw
+
+A [qw (quote word) helper](https://perlmaven.com/qw-quote-word) for old,
+disgruntled perl programmers.
+
+```js
+import { qw } from "@gustavnikolaj/string-utils";
+
+const blah = "hey";
+
+console.log(qw`   foo   bar
+  quux   ${blah}   baz
+`); // => [ 'foo', 'bar', 'quux', 'hey', 'baz' ]
+```
+
+Can also be imported directly:
+
+```js
+import qw from "@gustavnikolaj/string-utils/qw";
+```
