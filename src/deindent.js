@@ -1,6 +1,6 @@
 import zip from "./utils/zip";
 
-const deindent = (strs, ...args) => {
+export default function deindent(strs, ...args) {
   const str = zip(strs, ...args).join("");
 
   const lines = str.split("\n");
@@ -41,6 +41,4 @@ const deindent = (strs, ...args) => {
       return strs;
     }, [])
     .join("\n");
-};
-
-export default deindent;
+}
