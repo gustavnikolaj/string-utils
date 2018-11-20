@@ -1,5 +1,5 @@
 import expect from "unexpected";
-import qw from "../src/qw";
+import { qw } from "../src/qw";
 
 describe("qw", () => {
   it("should split a string into an array of words", () => {

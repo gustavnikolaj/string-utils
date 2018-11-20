@@ -1,5 +1,5 @@
 import expect from "unexpected";
-import collapse from "../src/collapse";
+import { collapse } from "../src/collapse";
 
 describe("collapse", () => {
   it("should collapse whitespace at the beginning and end of a string", () => {

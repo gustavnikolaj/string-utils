@@ -1,6 +1,6 @@
 import expect from "unexpected";
-import deindent from "../src/deindent";
-import reflow from "../src/reflow";
+import { deindent } from "../src/deindent";
+import { reflow } from "../src/reflow";
 
 describe("reflow", () => {
   it("should wrap lines to fit", () => {

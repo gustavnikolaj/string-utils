@@ -1,7 +1,7 @@
 import zip from "./utils/zip";
 
-const collapse = (strs, ...args) =>
-  zip(strs, ...args)
+export function collapse(strs, ...args) {
+  return zip(strs, ...args)
     .map(str => {
       return str
         .split("\n")
@@ -12,5 +12,4 @@ const collapse = (strs, ...args) =>
         .join(" ");
     })
     .join("");
-
-export default collapse;
+}

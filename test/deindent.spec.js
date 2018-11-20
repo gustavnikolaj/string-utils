@@ -1,5 +1,5 @@
 import expect from "unexpected";
-import deindent from "../src/deindent";
+import { deindent } from "../src/deindent";
 
 describe("deindent", () => {
   it("should be a function", () => {

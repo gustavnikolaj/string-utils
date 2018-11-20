@@ -96,9 +96,9 @@ function wrapTextToWidth(str, maximumWidth) {
   return wrappedParagraphs.join("\n\n");
 }
 
-import deindent from "./deindent";
+import { deindent } from "./deindent";
 
-export default function reflow(str, width) {
+export function reflow(str, width) {
   if (typeof width === "undefined") {
     width = str;
     str = undefined;

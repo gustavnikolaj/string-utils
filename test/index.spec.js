@@ -2,7 +2,7 @@ import expect from "unexpected";
 import { readdirSync } from "fs";
 import { resolve, basename } from "path";
 import * as stringUtils from "../src/index";
-import deindent from "../src/deindent";
+import { deindent } from "../src/deindent";
 
 describe("main module export", () => {
   it("should export the deindent method", () => {
