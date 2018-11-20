@@ -13,7 +13,7 @@ describe("main module export", () => {
 
   it("should export each of the other files in src", () => {
     const exportedFunctions = readdirSync(resolve(__dirname, "../src"))
-      .filter(file => file !== "index.js")
+      .filter(file => file !== "index.js" && file !== "utils")
       .map(filename => basename(filename, ".js"))
       .reduce((exportedFunctions, filename) => {
         exportedFunctions[filename] = expect.it("to be a function");

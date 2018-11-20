@@ -1,5 +1,4 @@
-const zip = (strs, ...args) =>
-  strs.map((str, i) => (args[i] ? str + args[i] : str));
+import zip from "./utils/zip";
 
 const deindent = (strs, ...args) => {
   const str = zip(strs, ...args).join("");
