@@ -68,4 +68,17 @@ describe("collapse", () => {
       `This is the first placeholder: foo Also, another placeholder: bar Also this, it should be on the next line: And it does`
     );
   });
+
+  it("should collapse spaces at the end of lines", () => {
+    const EMPTY = "";
+
+    expect(
+      collapse`
+      Foo ${EMPTY}
+      Bar
+    `,
+      "to equal",
+      "Foo Bar"
+    );
+  });
 });
