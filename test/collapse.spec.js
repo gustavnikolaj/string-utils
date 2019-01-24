@@ -40,4 +40,45 @@ describe("collapse", () => {
         `"foo" and another placeholder which value is "bar".`
     );
   });
+
+  it("should work seamlessy when placeholders fall on line ends", () => {
+    const p1 = "foo";
+    const p2 = "bar";
+
+    expect(
+      collapse`
+      This is the first placeholder:
+      ${p1}
+      Also, another placeholder:
+      ${p2}
+      Also this, it should be on the next line:
+      And it does
+    `,
+      "to equal",
+      collapse`
+      This is the first placeholder:
+      foo
+      Also, another placeholder:
+      bar
+      Also this, it should be on the next line:
+      And it does
+    `
+    ).and(
+      "to equal",
+      `This is the first placeholder: foo Also, another placeholder: bar Also this, it should be on the next line: And it does`
+    );
+  });
+
+  it("should collapse spaces at the end of lines", () => {
+    const EMPTY = "";
+
+    expect(
+      collapse`
+      Foo ${EMPTY}
+      Bar
+    `,
+      "to equal",
+      "Foo Bar"
+    );
+  });
 });
