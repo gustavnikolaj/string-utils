@@ -1,7 +1,10 @@
 import zip from "./utils/zip";
 
 export default function deindent(strs, ...args) {
-  const str = zip(strs, ...args).join("");
+  const str =
+    typeof strs === "string" && args.length === 0
+      ? strs
+      : zip(strs, ...args).join("");
 
   const lines = str.split("\n");
   let processedIndex = 0;

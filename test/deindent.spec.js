@@ -81,4 +81,14 @@ describe("deindent", () => {
 
     expect(str, "to equal", "foo\n  FOO BAR\nbar");
   });
+
+  describe("when used as a regular function", () => {
+    it("should remove indentation from a string", () => {
+      const str = deindent(`
+        deindent
+      `);
+
+      expect(str, "to equal", "deindent");
+    });
+  });
 });

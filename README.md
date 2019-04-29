@@ -30,6 +30,20 @@ console.log(deindent`
 `); // => "foo bar\n\n  qux baz"
 ```
 
+Can be used as a regular function as well as a tag for template strings:
+
+```js
+console.log(deindent`
+  foo bar
+  qux baz
+`); // => "foo bar\nqux baz"
+
+console.log(deindent(`
+  foo bar
+  qux baz
+`)); // => "foo bar\nqux baz"
+```
+
 Can also be required directly:
 
 ```js
