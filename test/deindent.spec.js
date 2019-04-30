@@ -71,6 +71,12 @@ describe("deindent", () => {
     expect(str, "to equal", "foo\n      bar");
   });
 
+  it("should not break with an empty string", () => {
+    const str = deindent``;
+
+    expect(str, "to equal", "");
+  });
+
   it("should work with variables", () => {
     const placeholder = "FOO BAR";
     const str = deindent`
