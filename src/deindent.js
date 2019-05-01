@@ -10,7 +10,10 @@ export default function deindent(strs, ...args) {
   let processedIndex = 0;
   let indentationOfFirstLine = null;
 
-  while (typeof indentationOfFirstLine !== "number" && processedIndex < lines.length) {
+  while (
+    typeof indentationOfFirstLine !== "number" &&
+    processedIndex < lines.length
+  ) {
     let firstLineCandidate = lines[processedIndex];
 
     // If the line has non-whitespace content
