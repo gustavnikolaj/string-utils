@@ -25,26 +25,23 @@ export default function deindent(strs, ...args) {
     processedIndex += 1;
   }
 
-  if (indentationOfFirstLine === 0) {
-    // Just remove leading and trailing spaces.
-    return str.trim();
-  }
-
   const regexp = new RegExp(`^[ ]{${indentationOfFirstLine}}`);
 
-  return lines
-    .reduce((strs, line, index) => {
-      if (strs.length === 0 && line.trim() === "") {
-        return strs;
-      }
+  let strippedLines =
+    indentationOfFirstLine === 0
+      ? lines
+      : lines.map(line => line.replace(regexp, ""));
 
-      if (index + 1 === lines.length && line.trim() === "") {
-        return strs;
-      }
+  if (strippedLines[0].trim() === "") {
+    strippedLines = strippedLines.slice(1);
+  }
 
-      strs.push(line.replace(regexp, ""));
+  if (
+    strippedLines.length > 0 &&
+    strippedLines[strippedLines.length - 1].trim() === ""
+  ) {
+    strippedLines = strippedLines.slice(0, -1);
+  }
 
-      return strs;
-    }, [])
-    .join("\n");
+  return strippedLines.join("\n");
 }

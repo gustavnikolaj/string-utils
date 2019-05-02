@@ -53,14 +53,33 @@ describe("deindent", () => {
     expect(str, "to equal", "foo\n  bar\n    qux\nbaz");
   });
 
-  it("should remove leading lines with no non-whitespace contents", () => {
+  it("should only remove the first line with no non-whitespace contents", () => {
     const str = deindent`
 
       foo
       bar
     `;
 
-    expect(str, "to equal", "foo\nbar");
+    expect(str, "to equal", "\nfoo\nbar");
+  });
+
+  it("should only remove the last line with no non-whitespace contents", () => {
+    const str = deindent`
+      foo
+      bar
+
+    `;
+
+    expect(str, "to equal", "foo\nbar\n");
+  });
+
+  it("should leave newlines expect at the end and start", () => {
+    const str = deindent`
+
+
+    `;
+
+    expect(str, "to equal", "\n");
   });
 
   it("should still clean trailing whitespace when the first line has no indentation", () => {
