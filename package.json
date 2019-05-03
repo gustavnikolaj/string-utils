@@ -16,7 +16,10 @@
     "clean": "node -r esm scripts/clean",
     "coverage": "nyc -a --include 'src/**/*.js' mocha && nyc report --reporter=lcov",
     "lint": "eslint . && prettier --check '**/*.js'",
+    "postpublish": "git push origin --all && git push origin --tags",
+    "postversion": "npm publish",
     "prepublish": "npm run build",
+    "preversion": "npm test",
     "test": "mocha"
   },
   "keywords": [
